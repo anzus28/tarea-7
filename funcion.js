@@ -21,7 +21,7 @@ function funcioncalc() {
     }
 
   }
-  function calcular() {
+  function procesarCalculo() {
 
     var txtPM = document.getElementsByName("txtPM")[0];
     var txtINR = document.getElementsByName("txtINR")[0];
