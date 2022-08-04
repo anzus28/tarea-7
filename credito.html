@@ -241,9 +241,10 @@
                               <input type="text" name="txtVivienda"  required=required />
                               <br><br>
                      
-                              <label for="txtMonto">Monto a Solicitar:</label>
-                              <input type="text" name="txtMonto"  required=required />
+                             <label for="txtMonto">Monto a Solicitar:</label>
+                              <input type="text" name="txtMonto" oninput="funcioncalc()" required=required />
                               <br><br>
+                      <p id="demo"></p>
                       
                               <label for="txtPlazo">Plazo en Años:</label>
                               <input type="number" name="txtPlazo" min="5" max="30" required=required />
