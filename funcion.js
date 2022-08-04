@@ -21,7 +21,7 @@ function funcioncalc() {
     }
 
   }
-  function procesarCalculo() {
+  function calcular() {
 
     var txtPM = document.getElementsByName("txtPM")[0];
     var txtINR = document.getElementsByName("txtINR")[0];
@@ -38,17 +38,17 @@ function funcioncalc() {
     nombre = document.getElementsByName("nombre")[0].value;
     email = document.getElementsByName("email")[0].value;
 
-//calculo de pago mensual
+
     pm = pago(parseFloat(txtTasa) / 12, parseInt(txtPlazo) * 12, parseFloat(txtMonto));
 
     txtPM.value = pm;
-//calculo de salario minimo requerido
-    txtINR.value = pm / 0.40;
-	
-//Calculo del porcentaje a financiar
-    txtPF.value = (parseFloat(txtMonto) / parseFloat(txtVivienda))*100;
 
-//validación de salario suficiente
+
+	
+
+    txtPF.value = (parseFloat(txtMonto) / parseFloat(txtVivienda))*100;
+    txtINR.value = pm / 0.40;
+
     if (parseFloat(salneto) >= (pm / 0.40)) {
         lblValSalario.innerHTML = "Monto de salario suficiente para el crédito";
     }
@@ -60,7 +60,7 @@ function funcioncalc() {
     var hoy = new Date(); // se obtiene la fecha del día de hoy
     var edad = hoy.getYear() - fn.getYear(); //calculo de la edad
 
-//validación de la edad del cliente
+
 	if (edad > 22 && edad < 55)
     {
         lblValEdad.innerHTML = "Cliente con edad suficiente para crédito";
@@ -69,7 +69,7 @@ function funcioncalc() {
     {
         lblValEdad.innerHTML = "Cliente no califica para crédito por edad";
     }
-
+   txtPM.value = pm;
     guardarLocal();
 }
 
@@ -102,7 +102,7 @@ function proyeccion()
     htmlTabla += "<th>Saldo</th>";
     htmlTabla += "</tr>";
 
-    //calculo de pago mensual
+
     pm = pago(parseFloat(txtTasa) / 12, parseInt(txtPlazo) * 12, parseFloat(txtMonto));
 	
     for (var i = 1; i <= parseInt(txtPlazo) * 12; i++) {
