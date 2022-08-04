@@ -219,64 +219,67 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="contact-map box">
-              <div id="formularioCredito" >
-                <label for="name">Nombre:</label>
-                <input type="text" name="nombre"  />
-           <br><br>
-                <label for="email">Email:</label>
-                <input type="email" name="email" required />
-                <br><br>
-           
-                <label for="fnace">Fecha de Nacimiento:</label>
-                <input type="date" name="fnace" value="2022-07-22" required />
-                <br><br>
-           
-                <label for="salneto">Salario Neto:</label>
-                <input type="text" name="salneto"  required />
-                <br><br>
-          
-                <label for="txtVivienda">Valor de la Vivienda:</label>
-                <input type="text" name="txtVivienda" required />
-                <br><br>
-        
-                <label for="txtMonto">Monto a Solicitar:</label>
-                <input type="text" name="txtMonto"  required />
-                <br><br>
-        
-                <label for="txtPlazo">Plazo en Años:</label>
-                <input type="number" name="txtPlazo" min="5" max="30" required />
-       
-                <label for="txtTasa">Tasa Interés:</label>
-                <input type="text" name="txtTasa" value="7.10" required/>
-                <br><br>
-           <button type="button" class="submit" onclick="procesarCalculo()">Calcular Pago Mensual</button>
-                <br><br>
-                <label for="txtPM">Pago Mensual:</label>
-                <input type="text" name="txtPM"readonly  />
-                <br><br>
-                <label for="txtINR">Ingreso neto Requerido:</label>
-                <input type="text" name="txtINR" readonly/>
-                <br><br>
-                <label for="txtPF">Porcentaje a Financiar:</label>
-                <input type="text" name="txtPF" readonly/>
-                <br><br>
+             <div id="formularioCredito" >
+                <form >
                 
-                <button type="button" class="submit" onclick="proyeccion()">Mostrar Proyección</button>
-                <br><br>
-                <p id="lblValSalario"></p>
-                <br><br>
-                <p id="lblValEdad"></p>
+                      
+                              <label for="name">Nombre:</label>
+                              <input type="text" name="nombre"  />
+                          <br><br>
+                              <label for="email">Email:</label>
+                              <input type="email" name="email" required=required />
+                              <br><br>
+                       
+                              <label for="fechanac">Fecha de Nacimiento:</label>
+                              <input type="date" name="fechanac"  required=required />
+                              <br><br>
+                    
+                              <label for="salneto">Salario Neto:</label>
+                              <input type="text" name="salneto"  required=required />
+                              <br><br>
+                              <label for="txtVivienda">Valor de la Vivienda:</label>
+                              <input type="text" name="txtVivienda"  required=required />
+                              <br><br>
+                     
+                              <label for="txtMonto">Monto a Solicitar:</label>
+                              <input type="text" name="txtMonto"  required=required />
+                              <br><br>
+                      
+                              <label for="txtPlazo">Plazo en Años:</label>
+                              <input type="number" name="txtPlazo" min="5" max="30" required=required />
+                              <br><br>
+                              <label for="txtTasa">Tasa Interés:</label>
+                              <input type="text" name="txtTasa" value="17.10" required=required />
+                              <br><br>
+                        <button type="button" class="submit" onclick="calcular()">Calcular Pago Mensual</button>
+                              <br><br>
+                              <label for="txtPagoMensual">Pago Mensual:</label>
+                              <input type="text" name="txtPagoMensual"  />
+                              <br><br>
+                              <label for="txtIgresoNeto">Ingreso neto Requerido:</label>
+                              <input type="text" name="txtIgresoNeto" />
+                              <br><br>
+                              <label for="txtPorce">Porcentaje a Financiar:</label>
+                              <input type="text" name="txtPorce" />
+                              <br><br>
+                            
+                              <button type="button" class="submit" onclick="proyeccion()">Mostrar Proyección</button>
+                    
+                              <p id="lblValSalario"></p>
+                       
+                              <p id="lblValEdad"></p>
+                       
+  
+              
+                  </div>
+              </form>
        
+  
 
-       
-    </div>
-</form>
 
 <div id="tblData">
-</div>
-<!--
-    <table><tr><td>Periodo</td><td>Pago Mensual</td><td>Interes</td><td>Amortiza</td><td>Saldo</td></tr><tr><td>1</td><td>4155496.9406972937</td><td>284000</td><td>3871496.9406972937</td><td>44128503.0593027</td></tr><tr><td>2</td><td>4155496.9406972937</td><td>261093.64310087432</td><td>3894403.297596419</td><td>40234099.761706285</td></tr><tr><td>3</td><td>4155496.9406972937</td><td>238051.75692342885</td><td>3917445.183773865</td><td>36316654.57793242</td></tr><tr><td>4</td><td>4155496.9406972937</td><td>214873.53958610012</td><td>3940623.4011111935</td><td>32376031.176821224</td></tr><tr><td>5</td><td>4155496.9406972937</td><td>191558.18446285892</td><td>3963938.756234435</td><td>28412092.42058679</td></tr><tr><td>6</td><td>4155496.9406972937</td><td>168104.8801551385</td><td>3987392.060542155</td><td>24424700.360044636</td></tr><tr><td>7</td><td>4155496.9406972937</td><td>144512.81046359742</td><td>4010984.130233696</td><td>20413716.22981094</td></tr><tr><td>8</td><td>4155496.9406972937</td><td>120781.15435971471</td><td>4034715.786337579</td><td>16379000.44347336</td></tr><tr><td>9</td><td>4155496.9406972937</td><td>96909.08595721738</td><td>4058587.854740076</td><td>12320412.588733284</td></tr><tr><td>10</td><td>4155496.9406972937</td><td>72895.7744833386</td><td>4082601.1662139553</td><td>8237811.422519328</td></tr><tr><td>11</td><td>4155496.9406972937</td><td>48740.38424990602</td><td>4106756.5564473877</td><td>4131054.8660719404</td></tr><tr><td>12</td><td>4155496.9406972937</td><td>24442.07462425898</td><td>4131054.8660730347</td><td>-0.0000010943040251731873</td></tr></table>    
--->      
+</div>    
+  
 </div>
            
               </div>
